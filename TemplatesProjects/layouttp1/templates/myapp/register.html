@@ -1,0 +1,74 @@
+{%extends 'myapp/base.html'%}
+{% block content_block %}
+   <div class="container">
+    <div class="row justify-content-center mt-3 ">
+        <div class="col-sm-8">
+             {% if emplist %}
+             <table class="table table-borderd table-striped table-hover text-capitalize ">
+                <thead>
+                    <tr>
+                        <th class="bg-primary text-white">Employee ID</th>
+                        <th  class="bg-primary text-white">Employee Name</th>
+                        <th  class="bg-primary text-white">Employee Job</th>
+                        <th  class="bg-primary text-white">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for emp in emplist%}
+                    <tr>
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.job}}</td>
+                        <td>
+                            <i class="bi bi-pencil-square fs-2 text-primary"></i>
+                            <i class="bi bi-trash fs-2 text-danger"></i>
+                            <i class="bi bi-binoculars fs-2 text-info"></i>
+
+                        </td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+             </table>
+        </div>
+    </div>
+   </div>
+    {%else%}
+        <h1>Records Not Found</h1> 
+    {%endif%}
+    <div class="container">
+    <div class="row justify-content-center mt-3 ">
+        <div class="col-sm-8">
+             {% if emplist %}
+             <table class="table table-borderd table-striped table-hover text-capitalize ">
+                <thead>
+                    <tr>
+                        <th class="bg-primary text-white">student ID</th>
+                        <th  class="bg-primary text-white">student Name</th>
+                        <th  class="bg-primary text-white">student marks</th>
+                        <th  class="bg-primary text-white">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for student in stulist%}
+                    <tr>
+                        <td>{{student.name}}</td>
+                        <td>{{student.age}}</td>
+                        <td>{{student.marks}}</td>
+                        <td>
+                            <i class="bi bi-pencil-square fs-2 text-primary"></i>
+                            <i class="bi bi-trash fs-2 text-danger"></i>
+                            <i class="bi bi-binoculars fs-2 text-info"></i>
+
+                        </td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+             </table>
+        </div>
+    </div>
+   </div>
+    {%else%}
+        <h1>Records Not Found</h1> 
+    {%endif%}
+
+{%endblock%}

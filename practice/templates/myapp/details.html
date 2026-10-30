@@ -1,0 +1,28 @@
+{%extends 'myapp/base.html'%}
+
+{% load widget_tweaks %}
+
+{%block body_block%}
+    <h2 class="text-center text-primary">Details page</h2>
+    <div class="container">
+        <table class="table table-bordered table-hover text-center">
+            <tr>
+                <th class="bg-primary text-white">employee Id</th>
+                <th class="bg-primary text-white" >employee Name</th>
+                <th class="bg-primary text-white">employee Age</th>
+            </tr>
+       
+        <tbody>
+            <tr>
+               
+                    <td class="bg-warning text-white">{{employee.employeeId}}</td>
+                    <td class="bg-warning text-white">{{employee.employeeName}}</td>
+                    <td class="bg-warning text-white">{{employee.employeeAge}}</td>
+
+
+                
+            </tr>
+        </tbody>
+         </table>
+    </div>
+{%endblock%}

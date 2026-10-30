@@ -1,0 +1,28 @@
+{%extends 'myapp/base.html'%}
+
+{% load widget_tweaks %}
+
+{%block body_block%}
+    <h2 class="text-center text-primary">Details page</h2>
+    <div class="container">
+        <table class="table table-bordered table-hover text-center">
+            <tr>
+                <th class="bg-primary text-white">Student Id</th>
+                <th class="bg-primary text-white" >Student Name</th>
+                <th class="bg-primary text-white">Student Marks</th>
+            </tr>
+       
+        <tbody>
+            <tr>
+               
+                    <td class="bg-warning text-white">{{student.StudentId}}</td>
+                    <td class="bg-warning text-white">{{student.StudentName}}</td>
+                    <td class="bg-warning text-white">{{student.StudentMarks}}</td>
+
+
+                
+            </tr>
+        </tbody>
+         </table>
+    </div>
+{%endblock%}

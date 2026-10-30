@@ -1,0 +1,6 @@
+views.py is python file.
+it will handle request and response
+in this file we write funstions to handle request and responce
+hence it is called as functional based view(fbv)
+in this file if we write classes to handle request and response
+hence its called class based view(cbv)

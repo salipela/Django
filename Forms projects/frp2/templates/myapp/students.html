@@ -1,0 +1,60 @@
+{%extends 'myapp/base.html'%}
+
+{% load widget_tweaks %}
+
+{%block body_block%}
+    
+    <div class="container">
+       <div class="row d-flex justify-content-center">
+        <div class="col-sm-8">
+            {%if stu_list%}
+            <table class="table table-bordered table-stripped table-hover text-center">
+                <caption class="caption-top text-center fs-4 fw-bold text-primary ">
+                    Students information
+                </caption>
+                <thead>
+                    <tr>
+                        <th class="bg-primary text-white">Student Id</th>
+                        <th class="bg-primary text-white">Student Name</th>
+                        <th class="bg-primary text-white">Student Marks</th>
+                        <th class="bg-primary text-white">Actions</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for stu in stu_list%}
+                    <tr>
+                        <td class="text-dark text-center">{{stu.StudentId}}</td>
+                        <td class="text-dark text-center">{{stu.StudentName}}</td>
+                        <td class="text-dark text-center">{{stu.StudentMarks}}</td>
+
+                        <td class="text-dark text-center">
+                            <a href="/details/{{stu.StudentId}}">
+                              <i class="bi bi-pencil-square fs-4 text-dark"></i>
+                            </a>
+                            <a href ="/edit/{{stu.StudentId}}/">
+                              <i class="bi bi-pencil fs-2 text-warning"></i>
+                            </a>
+                            <a href ="/delete/{{stu.StudentId}}/">
+                              <i class="bi bi-trash fs-2 text-primary"></i>
+                            </a>
+                        
+                        
+                        </td>
+                    </tr>
+                    {%endfor%}
+                    
+                </tbody>
+
+            </table>
+
+            {%else%}
+            <div class="display-6 text-danger">
+                records not found
+            </div>
+            {%endif%}
+
+        </div>
+       </div>
+    </div>
+{%endblock%}

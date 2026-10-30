@@ -1,0 +1,29 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+
+{%block body_block%}
+    <h2 class="text-center text-danger">Do You Want to Delete ?</h2>
+    <div class="container">
+        <table class="table table-bordered table-hover text-center">
+            <thead>
+                <tr>
+                    <th class="bg-primary text-white">Student Id</th>
+                    <th class="bg-primary text-white">Student Name</th>
+                    <th class="bg-primary text-white">Student Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-dark text-center">{{student.StudentId}}</td>
+                    <td class="text-dark text-center">{{student.StudentName}}</td>
+                    <td class="text-dark text-center">{{student.StudentMarks}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <form action="" method='POST'>
+        {% csrf_token %}
+        <a href="/students" class="btn btn-info btn-sm ">Back</a>
+        <button type="submit" class="btn btn-outline-danger">Delete</button>
+    </form>
+{%endblock%}
